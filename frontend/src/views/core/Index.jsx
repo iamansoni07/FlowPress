@@ -12,10 +12,16 @@ function Index() {
     const [posts, setPosts] = useState([]);
     const [popularPosts, setPopularPosts] = useState([]);
     const [category, setCategory] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const fetchPosts = async () => {
-        const response = await apiInstance.get(`post/lists/`);
-        setPosts(response.data);
+        try {
+            setLoading(true);
+            const response = await apiInstance.get(`post/lists/`);
+            setPosts(response.data);
+        } finally {
+            setLoading(false);
+        }
     };
 
     const fetchPopularPost = () => {
@@ -89,7 +95,14 @@ function Index() {
             <section className="pt-4 pb-0">
                 <div className="container">
                     <div className="row">
-                        {postItems?.map((p, index) => (
+                        {loading ? (
+                            <div className="col-12 text-center">
+                                <div className="spinner-border text-primary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        ) : (
+                            postItems?.map((p, index) => (
                             <div className="col-sm-6 col-lg-3" key={index}>
                                 <div className="card mb-4">
                                     <div className="card-fold position-relative">
@@ -124,7 +137,8 @@ function Index() {
                                     </div>
                                 </div>
                             </div>
-                        ))}
+                            ))
+                        )}
                     </div>
                     <nav className="d-flex mt-5">
                         <ul className="pagination">
