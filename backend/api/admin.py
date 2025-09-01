@@ -3,7 +3,9 @@ from api import models as api_models
 
 class UserAdmin(admin.ModelAdmin):
     search_fields  = ['full_name', 'username', 'email']
-    list_display  = ['username', 'email']
+    list_display  = ['username', 'email', 'full_name', 'date_joined']
+    list_filter = ['date_joined', 'is_active']
+    ordering = ['-date_joined']
 
 class ProfileAdmin(admin.ModelAdmin):
     search_fields  = ['user']
@@ -13,7 +15,10 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ["title"]
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ["title","user","category","view"]
+    list_display = ["title","user","category","view","status","date"]
+    list_filter = ["status","category","date"]
+    search_fields = ["title","description"]
+    ordering = ["-date"]
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ["post","name","email","comment"]
