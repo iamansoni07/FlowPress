@@ -20,11 +20,12 @@ class User(AbstractUser):
         return self.email
     
     def save(self, *args, **kwargs):
-        email_username, mobile = self.email.split("@")
-        if self.full_name == "" or self.full_name == None:
-            self.full_name = email_username
-        if self.username == "" or self.username == None:
-            self.username = email_username  
+        if self.email:
+            email_username = self.email.split("@")[0]
+            if not self.full_name or self.full_name.strip() == "":
+                self.full_name = email_username
+            if not self.username or self.username.strip() == "":
+                self.username = email_username  
     
         super(User, self).save(*args, **kwargs)
 
