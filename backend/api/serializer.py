@@ -53,6 +53,11 @@ class RegisterSerializer(serializers.ModelSerializer):
         if attrs['password'] != attrs['password2']:
             # Raise a validation error if the passwords don't match
             raise serializers.ValidationError({"password": "Password fields didn't match."})
+        
+        # Validate email format
+        email = attrs.get('email', '')
+        if not email or '@' not in email:
+            raise serializers.ValidationError({"email": "Please enter a valid email address."})
 
         # Return the validated attributes
         return attrs
