@@ -10,6 +10,7 @@ import { login, register } from "../../utils/auth";
 function Login() {
     const [bioData, setBioData] = useState({ email: "", password: "" });
     const [isLoading, setIsLoading] = useState(false);
+    const [errors, setErrors] = useState({});
     const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
     const navigate = useNavigate();
 
@@ -27,8 +28,18 @@ function Login() {
         });
     };
 
+    const validateForm = () => {
+        const newErrors = {};
+        if (!bioData.email) newErrors.email = "Email is required";
+        if (!bioData.password) newErrors.password = "Password is required";
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
     const handleLogin = async (e) => {
         e.preventDefault();
+        if (!validateForm()) return;
+        
         setIsLoading(true);
 
         const { error } = await login(bioData.email, bioData.password);
@@ -67,16 +78,16 @@ function Login() {
                                         <label htmlFor="email" className="form-label">
                                             Email Address
                                         </label>
-                                        <input type="email" onChange={handleBioDataChange} value={bioData.email} id="email" className="form-control" name="email" placeholder="johndoe@gmail.com" required="" />
-                                        <div className="invalid-feedback">Please enter valid username.</div>
+                                        <input type="email" onChange={handleBioDataChange} value={bioData.email} id="email" className={`form-control ${errors.email ? 'is-invalid' : ''}`} name="email" placeholder="johndoe@gmail.com" required="" />
+                                        {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                                     </div>
                                     {/* Password */}
                                     <div className="mb-3">
                                         <label htmlFor="password" className="form-label">
                                             Password
                                         </label>
-                                        <input type="password" onChange={handleBioDataChange} value={bioData.password} id="password" className="form-control" name="password" placeholder="**************" required="" />
-                                        <div className="invalid-feedback">Please enter valid password.</div>
+                                        <input type="password" onChange={handleBioDataChange} value={bioData.password} id="password" className={`form-control ${errors.password ? 'is-invalid' : ''}`} name="password" placeholder="**************" required="" />
+                                        {errors.password && <div className="invalid-feedback">{errors.password}</div>}
                                     </div>
                                     {/* Checkbox */}
                                     <div className="d-lg-flex justify-content-between align-items-center mb-4">
