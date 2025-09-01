@@ -179,13 +179,25 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Admin theme by Jazzmin
 - Icons by Font Awesome and Bootstrap Icons
 
+## 👨‍💻 Developer
+
+**FlowPress** is developed and maintained by:
+
+- **Name**: Aman Soni
+- **Email**: [aman.soni0713@gmail.com](mailto:aman.soni0713@gmail.com)
+- **Location**: Delhi, India
+- **GitHub**: [iamansoni07](https://github.com/iamansoni07)
+
 ## 📞 Support
 
 For support and questions:
 - Create an issue on GitHub
+- Email: [aman.soni0713@gmail.com](mailto:aman.soni0713@gmail.com)
 - Check the documentation
 - Review the code examples
 
 ---
 
 **FlowPress** - Empowering content creators with a modern, flexible blogging platform.
+
+*Developed with ❤️ by Aman Soni*

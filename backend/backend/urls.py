@@ -29,7 +29,7 @@ schema_view = get_schema_view(
         default_version="v1",
         description="This is the documentation for the FlowPress backend API",
         terms_of_service="https://example.com/policies/",
-        contact=openapi.Contact(email="admin@example.com"),
+        contact=openapi.Contact(email="aman.soni0713@gmail.com", name="Aman Soni"),
         license=openapi.License(name="MIT License"),
     ),
     public=True,

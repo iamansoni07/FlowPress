@@ -33,17 +33,17 @@ Contact info START */}
                             <div className="row mt-5">
                                 <div className="col-sm-6 mb-5 mb-sm-0">
                                     <h3>Address Informations</h3>
-                                    <address>123 Main Street, City, State, 12345</address>
+                                    <address>Delhi, India</address>
                                     <p>
                                         Call:{" "}
                                         <a href="#" className="text-reset">
-                                            <u>+123 4567 890 (Toll-free)</u>
+                                            <u>+91 98765 43210</u>
                                         </a>
                                     </p>
                                     <p>
                                         Email:{" "}
-                                        <a href="#" className="text-reset">
-                                            <u>admin@example.com</u>
+                                        <a href="mailto:aman.soni0713@gmail.com" className="text-reset">
+                                            <u>aman.soni0713@gmail.com</u>
                                         </a>
                                     </p>
                                     <p>
@@ -55,17 +55,17 @@ Contact info START */}
                                 <div className="col-sm-6">
                                     <h3>Contact Information </h3>
                                     <p>Get in touch with us to see how we can help you with your query</p>
-                                    <address>456 Business Ave, Town, State, 67890</address>
+                                    <address>Mumbai, Maharashtra, India</address>
                                     <p>
                                         Call:{" "}
                                         <a href="#" className="text-reset">
-                                            <u>+123 4567 890 (Toll-free)</u>
+                                            <u>+91 98765 43210</u>
                                         </a>
                                     </p>
                                     <p>
                                         Email:{" "}
-                                        <a href="#" className="text-reset">
-                                            <u>admin@example.com</u>
+                                        <a href="mailto:aman.soni0713@gmail.com" className="text-reset">
+                                            <u>aman.soni0713@gmail.com</u>
                                         </a>
                                     </p>
                                     <p>

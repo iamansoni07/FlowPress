@@ -242,7 +242,7 @@ JAZZMIN_SETTINGS = {
     # "site_icon": "images/favicon.ico",
     # "site_logo": "images/logos/logo.jpg",
     "welcome_sign": "Welcome To FlowPress Admin",
-    "copyright": "FlowPress Admin",
+    "copyright": "© 2024 Aman Soni. All rights reserved.",
     "user_avatar": "images/photos/logo.jpg",
     "topmenu_links": [
         {"name": "Dashboard", "url": "home", "permissions": ["auth.view_user"]},

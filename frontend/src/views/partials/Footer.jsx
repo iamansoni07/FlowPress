@@ -10,6 +10,10 @@ function Footer() {
                         <a href="#" className="text-reset btn-link ms-2 me-2">
                             FlowPress
                         </a>
+                        | Developed by{" "}
+                        <a href="mailto:aman.soni0713@gmail.com" className="text-reset btn-link">
+                            Aman Soni
+                        </a>
                         | All rights reserved
                     </div>
                 </div>
