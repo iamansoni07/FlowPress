@@ -52,10 +52,12 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 
     def get_object(self):
         user_id = self.kwargs['user_id']
-
-        user = api_models.User.objects.get(id=user_id)
-        profile = api_models.Profile.objects.get(user=user)
-        return profile
+        try:
+            user = api_models.User.objects.get(id=user_id)
+            profile = api_models.Profile.objects.get(user=user)
+            return profile
+        except (api_models.User.DoesNotExist, api_models.Profile.DoesNotExist):
+            return None
     
 
 def generate_numeric_otp(length=7):
